@@ -33,20 +33,20 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/courses"
+                  href="#courses"
                   className="hover:text-emerald-400 transition"
                 >
                   Courses
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-emerald-400 transition">
+                <a href="#about" className="hover:text-emerald-400 transition">
                   About
                 </a>
               </li>
               <li>
                 <a
-                  href="/contact"
+                  href="#contact"
                   className="hover:text-emerald-400 transition"
                 >
                   Contact
