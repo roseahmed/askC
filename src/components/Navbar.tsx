@@ -8,10 +8,10 @@ export function Navbar() {
         <a href="/" className="flex items-center gap-2">
           <img
             src="/logo.png"
-            alt="AskC Logo"
+            alt="ASKC Logo"
             className="h-10 w-auto object-contain"
           />
-          <span className="text-xl font-bold tracking-tight">AskC</span>
+          <span className="text-xl font-bold tracking-tight">ASKC</span>
         </a>
 
         <nav className="hidden gap-6 md:flex font-medium text-sm text-gray-600">
