@@ -123,14 +123,14 @@ export function Footer() {
                   Contact Support
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="/privacy"
                   className="hover:text-emerald-400 transition-colors"
                 >
                   Privacy Policy
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </Reveal>

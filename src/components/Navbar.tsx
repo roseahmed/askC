@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
+import toast from "react-hot-toast";
 
 export function Navbar() {
+  const handleComingSoon = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toast("Coming Soon!");
+  };
+
   return (
     <header className="fixed top-0 z-50 w-full border-b bg-white">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -32,9 +38,7 @@ export function Navbar() {
           </a>
         </nav>
 
-        <Button asChild>
-          <a href="#consultation">Book Consultation</a>
-        </Button>
+        <Button onClick={handleComingSoon}>Book Consultation</Button>
       </div>
     </header>
   );
