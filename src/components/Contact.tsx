@@ -3,26 +3,32 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { Map } from "./Map";
+import { Config } from "../config/config";
 
 export function Contact() {
+  const config = new Config();
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formRef.current) return;
+
+    if (!formRef.current) {
+      return;
+    }
 
     setIsSubmitting(true);
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        config.emailJsServiceId,
+        config.emailJsTemplateId,
         formRef.current,
-        "YOUR_PUBLIC_KEY",
+        config.emailJsPublicKey,
       )
       .then(() => {
         toast.success("Message sent successfully!");
+
         formRef.current?.reset();
       })
       .catch(() => {
@@ -33,7 +39,7 @@ export function Contact() {
 
   return (
     <section id="contact" className=" py-24 px-6 bg-white">
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
 
       <Reveal>
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-8">
@@ -45,7 +51,7 @@ export function Contact() {
         <p className="text-lg text-slate-700 text-center max-w-4xl mx-auto mb-12 leading-relaxed">
           Have questions or want to get started with admissions in Bangalore
           universities? Fill out the form below, and our counselors will get
-          back to you promptly.
+          back to you within 24 hours.
         </p>
       </Reveal>
 
@@ -80,10 +86,11 @@ export function Contact() {
             />
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="Tell us about your query or course interest (e.g. MBA, MBBS, Engineering)"
               className="p-3 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none h-32"
               required
             />
+
             <button
               type="submit"
               disabled={isSubmitting}
@@ -103,19 +110,23 @@ export function Contact() {
           <div className="bg-slate-50 p-8 rounded-2xl shadow-lg flex flex-col gap-6">
             <div>
               <h3 className="text-xl font-bold mb-2">Our Address</h3>
-              <p className="text-slate-700">
-                123 Education Street, Bangalore, Karnataka, India
-              </p>
+              <p className="text-slate-700">{config.orgAddresss}</p>
             </div>
 
             <div>
               <h3 className="text-xl font-bold mb-2">Phone</h3>
-              <p className="text-slate-700">+91 98765 43210</p>
+              <p className="text-slate-700">{config.orgPhoneNumber}</p>
             </div>
 
             <div>
               <h3 className="text-xl font-bold mb-2">Email</h3>
-              <p className="text-slate-700">support@askc.com</p>
+              <p className="text-slate-700">{config.orgEmail}</p>
+            </div>
+            <div className="mt-auto pt-6 border-t border-indigo-800">
+              <p className="text-sm italic">
+                * Our counselors are available Monday to Saturday, 09:00 AM —
+                9:00 PM.
+              </p>
             </div>
           </div>
         </Reveal>

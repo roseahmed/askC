@@ -7,8 +7,11 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { Config } from "../config/config";
 
 export function Footer() {
+  const config = new Config();
+
   return (
     <footer className="bg-indigo-950 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-4">
@@ -139,20 +142,16 @@ export function Footer() {
             <div className="flex flex-col gap-4 text-indigo-200/70 text-sm">
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-emerald-500 mt-1 shrink-0" />
-                <span>
-                  MG Road, Central Bangalore,
-                  <br />
-                  Karnataka 560001
-                </span>
+                <span>{config.orgAddresss}</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-emerald-500 shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>{config.orgPhoneNumber}</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-emerald-500 shrink-0" />
                 <a href="mailto:contact@askc.in" className="hover:text-white">
-                  support@askc.in
+                  {config.orgEmail}
                 </a>
               </div>
             </div>
