@@ -34,12 +34,6 @@ jobs:
       - name: Build
         run: bun run build
 
-      # - name: Verify Build Artifacts
-      #   run: |
-      #     echo "Checking if CNAME and .nojekyll exist in dist..."
-      #     ls -a ./dist
-      #     if [ ! -f ./dist/CNAME ]; then echo "ERROR: CNAME missing"; exit 1; fi
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
