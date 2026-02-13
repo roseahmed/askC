@@ -1,16 +1,5 @@
-import { SEO } from "./components/SEO";
 import { Home } from "./pages/Home";
 
 export default function App() {
-  return (
-    <>
-      <SEO
-        title="ASKC- Education & Career Consulting | Bangalore College Admission Consultants"
-        description="Expert admission consultancy for Bangalore colleges & universities. Students can apply from anywhere in India or abroad."
-        url="https://askc.in/"
-        image="https://askc.in/hero/hero1.png" // optional OG image
-      />
-      <Home />
-    </>
-  );
+  return <Home />;
 }
