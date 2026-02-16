@@ -5,13 +5,14 @@ export class Config {
   emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
 
   // ORGANIZATION DETAILS
-  orgPhoneNumber = "+91 98765 43210";
+  orgPhoneNumber = "+91 91871 96013 | +91 91871 97018";
   orgEmail = "support@askc.in";
-  orgAddresss = "123 Education Street, Bangalore, Karnataka, India";
+  orgAddresss =
+    "#1240, GS Arcade BEL Layout, Vidyaranyapura Main Road Near Kanti Sweets, Bangalore, 560097";
   orgFacebookURL = "/";
   orgLinkedinURL = "/";
   orgInstagramURL = "/";
 
   // CONTACT CTA
-  phoneWhatsAppCTA = "+919876543210";
+  phoneWhatsAppCTA = "+919187197018";
 }
