@@ -227,22 +227,20 @@ export function Footer() {
               Navigation
             </h3>
             <ul className="flex flex-col gap-4 text-slate-400 text-sm">
-              {["Home", "Services", "Courses", "About", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="flex items-center gap-2 hover:text-white transition-colors group"
-                    >
-                      <ChevronRight
-                        size={14}
-                        className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0"
-                      />
-                      {item}
-                    </a>
-                  </li>
-                ),
-              )}
+              {["Services", "Courses", "About", "Contact"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="flex items-center gap-2 hover:text-white transition-colors group"
+                  >
+                    <ChevronRight
+                      size={14}
+                      className="text-emerald-500 opacity-0 group-hover:opacity-100 transition-all -ml-4 group-hover:ml-0"
+                    />
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </Reveal>

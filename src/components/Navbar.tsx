@@ -81,7 +81,7 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-between border-b border-slate-50 py-5 text-2xl font-black text-slate-600"
+                className="flex items-center justify-between border-b border-slate-50 py-5 text-xl font-black text-slate-600"
               >
                 {link.name}
                 <ChevronRight className="h-6 w-6 text-emerald-500" />
@@ -95,7 +95,7 @@ export function Navbar() {
               Student Support
             </p>
             <a
-              href="tel:+919706736327"
+              href={`tel:${config.orgPhoneNumber}`}
               className="flex items-center gap-4 text-lg font-bold text-slate-950"
             >
               <Phone className="h-5 w-5 text-emerald-500" />{" "}
