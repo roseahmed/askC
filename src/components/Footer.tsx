@@ -186,16 +186,16 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <img src="/logo.png" alt="AskC Logo" className="h-10 w-auto  " />
               <span className="text-2xl font-black tracking-tighter text-white">
-                AskC
+                AskC Private Limited
               </span>
             </div>
             <p className="text-slate-400 leading-relaxed text-sm">
               <span className="text-emerald-500 font-bold">
-                AskC Education & Career Consultancy.
+                AskC Education & Career Consultancy
               </span>
               <br />
               Bridging the gap between academic ambition and admission in
-              Bengaluru's elite universities.
+              Bengaluru's elite universities
             </p>
             <div className="flex gap-4">
               <a
@@ -311,15 +311,13 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs text-center md:text-left">
             © {new Date().getFullYear()}{" "}
-            <span className="text-slate-300">
-              AskC Educational Consultancy.
-            </span>
-            <br className="md:hidden" /> All Rights Reserved.
+            <span className="text-slate-300">AskC Private Limited</span>
+            <br className="md:hidden" /> All Rights Reserved
           </p>
-          {/* <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
+          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
-          </div> */}
+          </div>
         </div>
       </div>
     </footer>

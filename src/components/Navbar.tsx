@@ -20,8 +20,8 @@ export function Navbar() {
         {/* Logo - Always Visible */}
         <a href="/" className="flex items-center gap-2 z-110">
           <img src="/logo.png" alt="AskC Logo" className="h-8 w-auto md:h-10" />
-          <span className="text-xl font-black tracking-tighter text-slate-700">
-            AskC
+          <span className="text-xl font-black tracking-tighter text-slate-600">
+            AskC Private Limited
           </span>
         </a>
 
@@ -94,15 +94,29 @@ export function Navbar() {
             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">
               Student Support
             </p>
+
+            {/* Phone Numbers Grouped */}
+            <div className="flex items-start gap-4">
+              <Phone className="h-5 w-5 mt-1 text-emerald-500" />
+              <div className="flex flex-col space-y-2">
+                <a
+                  href={`tel:${config.orgPhoneNumber}`}
+                  className="text-lg font-bold text-slate-950 leading-none"
+                >
+                  {config.orgPhoneNumber}
+                </a>
+                <a
+                  href={`tel:${config.orgAltPhoneNumber}`}
+                  className="text-lg font-bold text-slate-950 leading-none"
+                >
+                  {config.orgAltPhoneNumber}
+                </a>
+              </div>
+            </div>
+
+            {/* Email Support */}
             <a
-              href={`tel:${config.orgPhoneNumber}`}
-              className="flex items-center gap-4 text-lg font-bold text-slate-950"
-            >
-              <Phone className="h-5 w-5 text-emerald-500" />{" "}
-              {config.orgPhoneNumber}
-            </a>
-            <a
-              href="mailto:info@askc.in"
+              href={`mailto:${config.orgEmail}`}
               className="flex items-center gap-4 text-lg font-bold text-slate-950"
             >
               <Mail className="h-5 w-5 text-emerald-500" /> {config.orgEmail}
