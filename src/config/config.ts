@@ -5,7 +5,8 @@ export class Config {
   emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
 
   // ORGANIZATION DETAILS
-  orgPhoneNumber = "+91 91871 96013 | +91 91871 97018";
+  orgPhoneNumber = "+91 91871 96013";
+  orgAltPhoneNumber = "+91 91871 97018";
   orgEmail = "support@askc.in";
   orgAddresss =
     "#1240, GS Arcade BEL Layout, Vidyaranyapura Main Road Near Kanti Sweets, Bangalore, 560097";

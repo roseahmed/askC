@@ -1,92 +1,131 @@
 import { Reveal } from "@/components/Reveal";
+import { ArrowUpRight } from "lucide-react";
 
 const mainCourses = [
   {
     title: "MBBS",
     description:
-      "Undergraduate medical program for students aspiring to become doctors, available in India and abroad.",
+      "Secure your future in medicine. We provide end-to-end guidance for NEET-based admissions in top Indian and international medical universities.",
     image: "/courses/mbbs.png",
+    tag: "High Demand",
   },
   {
     title: "BAMS",
     description:
-      "Bachelor of Ayurvedic Medicine and Surgery, emphasizing traditional Indian medicine, holistic healthcare, and clinical practice.",
+      "Merge tradition with modern science. Expert pathways into leading Ayurvedic institutions with a focus on holistic clinical practice.",
     image: "/courses/bams.png",
+    tag: "Traditional Medicine",
   },
   {
     title: "Nursing",
     description:
-      "Healthcare-focused programs with international career opportunities and clinical exposure.",
+      "Global healthcare careers start here. We help you find programs with the best clinical exposure and international placement support.",
     image: "/courses/nursing.png",
+    tag: "Global Career",
   },
   {
     title: "Pharmacy",
     description:
-      "Programs covering pharmaceutical sciences, research, and clinical practice.",
+      "Enter the booming pharmaceutical sector. Guidance for B.Pharm and D.Pharm programs focusing on research and industry readiness.",
     image: "/courses/pharmacy.png",
+    tag: "Healthcare Tech",
   },
   {
     title: "BBA",
     description:
-      "Bachelor of Business Administration with global exposure in finance, marketing, and operations.",
+      "Launch your business career. Admissions into elite management hubs with specializations in Finance, Marketing, and Operations.",
     image: "/courses/bba.png",
+    tag: "Management",
   },
   {
     title: "Engineering",
     description:
-      "Undergraduate and postgraduate programs in Computer Science, Mechanical, Civil, and Electrical fields.",
+      "Build the future. Direct entry into top-tier Engineering colleges for CS, AI, Data Science, and core technical fields.",
     image: "/courses/engineering.png",
+    tag: "Technical Elite",
   },
 ];
 
 export function Courses() {
-  return (
-    <section id="courses" className="py-24 px-6 bg-slate-50">
-      <Reveal>
-        <h2 className="text-3xl font-bold text-center mb-14">
-          Courses We Offer
-        </h2>
-      </Reveal>
+  // Navigation function for better reusability
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {mainCourses.map((course) => (
-          <Reveal key={course.title}>
-            <div className="flex flex-col h-full overflow-hidden rounded-2xl shadow-xl transition-transform duration-300 hover:-translate-y-1">
-              {/* Image Section */}
-              <div className="h-48 w-full overflow-hidden relative">
-                <div className="w-full aspect-[4/3] overflow-hidden relative">
+  return (
+    <section id="courses" className="py-24 px-6 bg-white">
+      <div className="mx-auto max-w-7xl">
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-600 mb-3">
+              Specialized Pathways
+            </h2>
+            <h3 className="text-4xl font-black text-slate-900 md:text-5xl">
+              Courses We Represent
+            </h3>
+            <div className="mt-4 mx-auto h-1.5 w-20 bg-emerald-500 rounded-full" />
+          </div>
+        </Reveal>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {mainCourses.map((course) => (
+            <Reveal key={course.title}>
+              <div className="group relative flex flex-col h-full overflow-hidden bg-white border border-slate-200 transition-all duration-300 hover:shadow-2xl hover:border-emerald-500/30">
+                {/* Image Section */}
+                <div className="relative h-64 w-full overflow-hidden">
                   <img
                     src={course.image}
                     alt={course.title}
                     loading="lazy"
-                    className="h-full w-full object-cover object-center transition-transform duration-500 hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
+
+                  <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 shadow-sm">
+                    {course.tag}
+                  </span>
+
+                  <div className="absolute bottom-4 left-6">
+                    <h4 className="text-2xl font-bold text-white tracking-tight">
+                      {course.title}
+                    </h4>
+                  </div>
                 </div>
 
-                {/* <img
-                  src={course.image}
-                  alt={course.title}
-                  loading="lazy"
-                  className="h-full w-full object-contain transition-transform duration-500 hover:scale-105"
-                /> */}
+                {/* Content Section */}
+                <div className="p-8 flex-1 flex flex-col">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-1 italic">
+                    {course.description}
+                  </p>
 
-                {/* Overlay Course Name */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <h3 className="text-white text-xl font-bold text-center px-4">
-                    {course.title}
-                  </h3>
+                  {/* Updated Professional Button with ID Link */}
+                  <button
+                    onClick={scrollToContact}
+                    className="group/btn flex w-fit items-center gap-2 text-sm font-bold text-emerald-600 transition-all uppercase tracking-widest hover:text-emerald-700"
+                  >
+                    <span className="relative">
+                      Inquire Now
+                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-600 transition-all duration-300 group-hover/btn:w-full"></span>
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  </button>
                 </div>
               </div>
+            </Reveal>
+          ))}
+        </div>
 
-              {/* Text Section */}
-              <div className="p-6 bg-white flex-1 flex flex-col">
-                <p className="text-slate-700 text-sm leading-relaxed flex-1">
-                  {course.description}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-        ))}
+        <Reveal>
+          <div className="mt-16 text-center">
+            <p className="text-slate-500 text-sm italic">
+              *Looking for a specific specialization? AskC covers 50+ additional
+              undergraduate and postgraduate programs.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
